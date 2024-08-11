@@ -1,41 +1,271 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Cache Bank Landing Page</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/css/leaflet.css">
-    <link rel="stylesheet" href="./assets/css/tailwind/tailwind.min.css">
-    <link rel="stylesheet" href="./assets/css/theme.css">
-    <link rel="stylesheet" href="./assets/css/loopple/loopple.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cache Bank</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="cache.jpeg" type="image/jpeg"> 
+    <style>
+        /* Custom Styles */
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('path-to-hero-background-image.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+        }
+
+        .section-divider {
+            border-top: 2px solid #e5e7eb;
+            margin: 2rem 0;
+        }
+
+        .cta-btn {
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #4caf50;
+            transform: scale(1.05);
+        }
+
+        body {
+            background-color: #f0fdf4;
+        }
+
+        .footer-icons a {
+            font-size: 1.5rem;
+            color: #e5e7eb;
+            transition: color 0.3s;
+        }
+
+        .footer-icons a:hover {
+            color: #ffffff;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/v4-shims.min.css" integrity="sha512-p++g4gkFY8DBqLItjIfuKJPFvTPqcg2FzOns2BNaltwoCOrXMqRIOqgWqWEvuqsj/3aVdgoEo2Y7X6SomTfUPA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="bg-white font-plus-jakarta">
-    <div class="container flex flex-col mx-auto">
-        <!-- Add your navigation bar and header content here -->
+
+<body class="font-sans antialiased text-gray-900">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <a href="#" class="flex-shrink-0 flex items-center">
+                        <img class="h-8 w-8" src="path-to-logo" alt="Cache Logo">
+                        <span class="ml-2 text-xl font-bold">CACHE</span>
+                    </a>
+                    <div class="hidden sm:flex sm:space-x-8 sm:ml-10">
+                        <a href="#" class="text-gray-500 hover:text-gray-900">Product</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900">Features</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900">Get Started</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <a href="#" class="text-gray-500 hover:text-gray-900">Log In</a>
+                    <a href="#" class="ml-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Sign Up</a>
+                </div>
+                <div class="flex sm:hidden">
+                    <button id="nav-toggle" class="text-gray-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="nav-menu" class="hidden sm:hidden">
+            <a href="#" class="block px-4 py-2 text-gray-500 hover:text-gray-900">Product</a>
+            <a href="#" class="block px-4 py-2 text-gray-500 hover:text-gray-900">Features</a>
+            <a href="#" class="block px-4 py-2 text-gray-500 hover:text-gray-900">Get Started</a>
+            <a href="#" class="block px-4 py-2 text-gray-500 hover:text-gray-900">Contact</a>
+            <a href="#" class="block px-4 py-2 text-gray-500 hover:text-gray-900">Log In</a>
+            <a href="#" class="block px-4 py-2 text-green-500 hover:text-green-600">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-12 bg-cover bg-center">
+        <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center">
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <h1 class="text-4xl font-bold mb-4">The Clever Place to Keep Your Cache</h1>
+                <p class="text-lg mb-6">Cache Bank is designed exclusively for software developers. We understand your financial needs are as unique as the code you write.</p>
+                <div class="flex justify-center lg:justify-start space-x-4">
+                    <a href="#" class="cta-btn px-6 py-3 bg-green-500 text-white rounded hover:bg-green-600">Join Cache Now</a>
+                    <a href="#" class="cta-btn px-6 py-3 bg-green-500 text-white rounded hover:bg-green-600">Join Our Discord Server</a>
+                </div>
+            </div>
+            <div class="lg:w-1/2 text-center">
+                <img src="path-to-illustration" alt="Developer Illustration" class="w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Endorsements -->
+    <section class="bg-white py-8">
+        <div class="container mx-auto text-center">
+            <h2 class="text-xl font-semibold text-gray-800 mb-6">Endorsed by global companies like</h2>
+            <div class="flex justify-center space-x-8">
+                <img src="nike-logo.svg" alt="Nike" class="h-12">
+                <img src="amazon-logo.svg" alt="Amazon" class="h-12">
+                <img src="minecraft-logo.svg" alt="Microsoft" class="h-12">
+                <img src="steam-logo.svg" alt="Steam" class="h-12">
+                <img src="notion-logo.svg" alt="Notion" class="h-12">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="bg-gray-100 py-12">
+        <div class="container mx-auto text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Elevate Your Banking with Cache</h2>
+            <p class="text-lg text-gray-700 mb-8">We merge cutting-edge banking with a deep understanding of software developers' needs.
+                Experience tailored financial solutions, advanced solutions, and tech-focused support designed just for you.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-200 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <img src="developer-focused-accounts.svg" alt="Developer-Focused Account Plans" class="feature-icon mx-auto">
+                    <h3 class="mt-4 text-xl font-semibold text-gray-900">Developer-Focused Account Plans</h3>
+                    <p class="mt-2 text-gray-700">Tailored accounts offering benefits like high-yield savings and exclusive investment options.</p>
+                </div>
+                <div class="bg-gray-200 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <img src="advanced-online-banking.svg" alt="Advanced Online Banking Platform" class="feature-icon mx-auto">
+                    <h3 class="mt-4 text-xl font-semibold text-gray-900">Advanced Online Banking Platform</h3>
+                    <p class="mt-2 text-gray-700">A cutting-edge, intuitive online banking interface with features like API integrations.</p>
+                </div>
+                <div class="bg-gray-200 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <img src="tech-savvy-customer.svg" alt="Tech-Savvy Customer Support" class="feature-icon mx-auto">
+                    <h3 class="mt-4 text-xl font-semibold text-gray-900">Tech-Savvy Customer Support</h3>
+                    <p class="mt-2 text-gray-700">Expert support team with a deep understanding of the tech industry.</p>
+                </div>
+                <div class="bg-gray-200 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <img src="path/to/icon4.png" alt="Seamless API Integrations" class="feature-icon mx-auto">
+                    <h3 class="mt-4 text-xl font-semibold text-gray-900">Seamless API Integrations</h3>
+                    <p class="mt-2 text-gray-700">Effortlessly connect your financial data with your development tools.</p>
+                </div>
+                <div class="bg-gray-200 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <img src="innovative-financial-tools.svg" alt="Automated Financial Reporting" class="feature-icon mx-auto">
+                    <h3 class="mt-4 text-xl font-semibold text-gray-900">Automated Financial Reporting</h3>
+                    <p class="mt-2 text-gray-700">Real-time financial insights tailored to your project timelines.</p>
+                </div>
+                <div class="bg-gray-200 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                    <img src="path/to/icon6.png" alt="high level-security features " class="feature-icon mx-auto">
+                    <h3 class="mt-4 text-xl font-semibold text-gray-900">High level-security features</h3>
+                    <p class="mt-2 text-gray-700">State-of-the-art cybersecurity measures,including multi-factor auntentication and encryption,ensuring the safety of digital assets ,which is crucial for tech professionals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto text-center">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-4xl font-bold text-gray-900">250K+</h3>
+                    <p class="text-lg text-gray-700 mt-2">Hours saved sitting in the bank</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-gray-900">12M+</h3>
+                    <p class="text-lg text-gray-700 mt-2">Cache saved</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-gray-900">2.8k+</h3>
+                    <p class="text-lg text-gray-700 mt-2">Global partners</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-gray-900">18,000k</h3>
+                    <p class="text-lg text-gray-700 mt-2">Happy developers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Cache Works Section -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">How Cache Works</h2>
+            <p class="text-lg text-gray-700 mb-8"> Cache bank simplifies sign-up with a user-friendly website,streamlined account options,and an efficient verification process,making banking accessible and hassle-free for development</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-900">1. Visit Cache Bank Website</h3>
+                    <p class="text-gray-700 mt-2">Go to Cache Bank, "click sign up" or "open an account".</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-900">2. Choose Account Type</h3>
+                    <p class="text-gray-700 mt-2">Select from checking, savings, or developer-specific account.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-900">3. Provide Personal Information</h3>
+                    <p class="text-gray-700 mt-2">Complete the form with your details and identification for security.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-900">4. Verify and Submit</h3>
+                    <p class="text-gray-700 mt-2">Check your information, agree, and submit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Contact Section -->
+<section class="bg-white py-12">
+    <div class="container mx-auto text-center">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Contact Us</h2>
+        <p class="text-lg text-gray-700 mb-8">Have questions or need support? Get in touch with us.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div>
+                <i class="fas fa-envelope text-green-500 text-3xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-900">Email</h3>
+                <p class="text-gray-700 mt-2">hi@cachebank.com</p>
+            </div>
+            <div>
+                <i class="fas fa-phone text-green-500 text-3xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-900">Phone</h3>
+                <p class="text-gray-700 mt-2">+215-486-5135</p>
+            </div>
+            <div>
+                <i class="fas fa-map-marker-alt text-green-500 text-3xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-900">Location</h3>
+                <p class="text-gray-700 mt-2">find us at our office</p>
+                <p class="text-gray-700 mt-2">15 Tech Alley ,Cape Town</p>
+            </div>
+        </div>
     </div>
-    <div class="w-full">
-        <!-- Add wide full-width container content here -->
-    </div>
-    <div class="container mx-auto">
-        <!-- Add centered container content here -->
-    </div>
-    <div class="w-full">
-        <!-- Add wide full-width container content here -->
-    </div>
-    <div class="w-full">
-        <!-- Add wide full-width container content here -->
-    </div>
-    <div class="w-full bg-green-500">
-        <!-- Add footer content here -->
-    </div>
-    <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/countup.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/countto.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/maps.js"></script>
-    <script src="./assets/js/loopple/loopple.js"></script>
+</section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">&copy; 2024 Cache Bank. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4 footer-icons">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="mt-6">
+                <a href="#" class="text-gray-400 hover:text-gray-200">Privacy Policy</a> |
+                <a href="#" class="text-gray-400 hover:text-gray-200">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
+
 </html>
